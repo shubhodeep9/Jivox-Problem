@@ -70,7 +70,7 @@
   </form>
   <br/>
   <br />
-  <h3>Result</h3>
+  <h3>Extended Contact List</h3>
   <div id="result" style="margin-top: 20px;">
   </div>
   </center>
@@ -90,10 +90,29 @@
             C: $("#C").val(),
             D: $("#D").val(),
             E: $("#E").val()
-          },
-          success:function(){
-            $("#result").html("hey");
           }
+        }).done(function(data){
+          res = "A:=";
+          for (var i = 1; i < data.A.length; i++) {
+            res = res + " > " + data.A[i];
+          }
+          res += "<br />B:=";
+          for (var i = 1; i < data.B.length; i++) {
+            res = res + " > " + data.B[i];
+          }
+          res += "<br />C:=";
+          for (var i = 1; i < data.C.length; i++) {
+            res = res + " > " + data.C[i];
+          }
+          res += "<br />D:=";
+          for (var i = 1; i < data.D.length; i++) {
+            res = res + " > " + data.D[i];
+          }
+          res += "<br />E:=";
+          for (var i = 1; i < data.E.length; i++) {
+            res = res + " > " + data.E[i];
+          }
+          $("#result").html(res);
         });
       }
       });
