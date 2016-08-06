@@ -21,6 +21,10 @@ func inArray(i string, a []string) bool {
 	return false
 }
 
+/*
+This post controller has the algorithm for the problem
+*/
+
 func (o *MainController) Post() {
 	inputs := map[string]string{
 		"A": o.Input().Get("A"),
